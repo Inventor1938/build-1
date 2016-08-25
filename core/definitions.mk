@@ -1572,7 +1572,7 @@ endef
 # Explicitly delete the archive first so that ar doesn't
 # try to add to an existing archive.
 define transform-host-o-to-static-lib
-@echo -e "$($(PRIVATE_PREFIX)DISPLAY) ${CL_YLW}"StaticLib:"${CL_RST}" $(PRIVATE_MODULE) ($@)"
+@echo -e ${CL_YLW}$($(PRIVATE_PREFIX)DISPLAY) "StaticLib:"${CL_RST}" $(PRIVATE_MODULE) ($@)"
 @mkdir -p $(dir $@)
 @rm -f $@
 $(extract-and-include-host-whole-static-libs)
@@ -1818,7 +1818,7 @@ endef
 endif
 
 define transform-host-o-to-executable
-@echo -e "$($(PRIVATE_PREFIX)DISPLAY) ${CL_YLW}"Executable:"${CL_RST}" $(PRIVATE_MODULE) ($@)"
+@echo -e ${CL_YLW} "$($(PRIVATE_PREFIX)DISPLAY) Executable:"${CL_RST}" $(PRIVATE_MODULE) ($@)"
 @mkdir -p $(dir $@)
 $(transform-host-o-to-executable-inner)
 endef
@@ -2536,7 +2536,7 @@ endef
 # Note: we intentionally don't clean PRIVATE_CLASS_INTERMEDIATES_DIR
 # in transform-java-to-classes for the sake of vm-tests.
 define transform-host-java-to-package
-@echo -e "$($(PRIVATE_PREFIX)DISPLAY) ${CL_YLW}"Java:"${CL_RST}" $(PRIVATE_MODULE) ($(PRIVATE_CLASS_INTERMEDIATES_DIR))"
+@echo -e ${CL_YLW} "$($(PRIVATE_PREFIX)DISPLAY) Java:"${CL_RST}" $(PRIVATE_MODULE) ($(PRIVATE_CLASS_INTERMEDIATES_DIR))"
 $(call compile-java,$(HOST_JAVAC),$(PRIVATE_BOOTCLASSPATH))
 endef
 
