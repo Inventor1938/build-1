@@ -1616,13 +1616,13 @@ endef
 endif
 
 define transform-host-o-to-shared-lib
-@echo -e "$($(PRIVATE_PREFIX)DISPLAY) ${CL_YLW}"SharedLib:"${CL_RST}" $(PRIVATE_MODULE) ($@)"
+@echo -e ${CL_YLW}"$($(PRIVATE_PREFIX)DISPLAY) SharedLib:"${CL_RST}" $(PRIVATE_MODULE) ($@)"
 @mkdir -p $(dir $@)
 $(transform-host-o-to-shared-lib-inner)
 endef
 
 define transform-host-o-to-package
-@echo -e "$($(PRIVATE_PREFIX)DISPLAY) ${CL_YLW}"Package:"${CL_RST}" $(PRIVATE_MODULE) ($@)"
+@echo -e ${CL_YLW}"$($(PRIVATE_PREFIX)DISPLAY) Package:"${CL_RST}" $(PRIVATE_MODULE) ($@)"
 @mkdir -p $(dir $@)
 $(transform-host-o-to-shared-lib-inner)
 endef
